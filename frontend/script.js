@@ -38,13 +38,15 @@ async function fetchMedicines() {
             throw new Error('Response status: ${response.status}')
         }
 
-        const result = await response.json();
-        return result
+        const data = await response.json();
+        return data
     } catch(Error){
         console.error(Error.message)
     }
     
 }
+
+data = fetchMedicines()
 
 /**
  * TODO (Core task 1): render the medicines into #results without crashing on
@@ -56,6 +58,11 @@ function renderMedicines(data) {
     // TODO: build a table (the .results styles expect a <table>), iterate the
     // records, and render each row safely. Use the .invalid class to flag bad
     // values if you like.
+    var table = document.createElement("TABLE")
+
+    for ()
+
+
 }
 
 /**
