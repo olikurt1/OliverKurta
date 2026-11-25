@@ -31,6 +31,19 @@ const errorEl = document.getElementById("error");
  */
 async function fetchMedicines() {
     // TODO: fetch(`${BASE_URL}/medicines`), check response.ok, return the data.
+    const url = "{BASE_URL}/medicines";
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Response status: ${response.status}')
+        }
+
+        const result = await response.json();
+        return result
+    } catch(Error){
+        console.error(Error.message)
+    }
+    
 }
 
 /**
